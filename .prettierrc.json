@@ -1,6 +1,6 @@
 {
   "parser": "babel",
-  "printWidth": 80,
+  "printWidth": 130,
   "tabWidth": 4,
   "useTabs": false,
   "semi": true,
