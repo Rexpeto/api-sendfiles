@@ -19,7 +19,7 @@ readdirSync(PATH_ROUTE).filter(fileName => {
         //* Dynamic import
         import(`./${fileName}`).then(moduleRouter => {
             console.log(`✔  Load route --> ${name}`);
-            router.use(`/${name}`, moduleRouter.router);
+            router.use(`/api/v1/${name}/`, moduleRouter.router);
         });
     } catch (error) {
         console.log(`❌ Error load route --> ${name}`);
