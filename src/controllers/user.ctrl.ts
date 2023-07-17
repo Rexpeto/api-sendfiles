@@ -21,7 +21,7 @@ export const register = async ({ body }: Request, res: Response) => {
 	});
 
 	if (user?.error) {
-		return res.status(403).json({ msg: "El usuario ya existe" });
+		return res.status(user.error).json({ msg: user.msg });
 	}
 
 	res.status(200).json(user);
