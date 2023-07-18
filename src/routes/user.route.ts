@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { validateRegister } from "../validators/user.validator";
 import { login, register } from "../controllers/user.ctrl";
 
 export const router = Router();
@@ -7,4 +8,4 @@ export const router = Router();
 router.post("/login", login);
 
 //? Route of register user
-router.post("/register", register);
+router.post("/register", validateRegister, register);
