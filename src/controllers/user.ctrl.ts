@@ -8,12 +8,6 @@ export const login = (req: Request, res: Response) => {
 export const register = async ({ body }: Request, res: Response) => {
 	const { name, email, password } = body;
 
-	if (!name) return res.status(403).json({ msg: "Debe colocar un nombre" });
-
-	if (!email) return res.status(403).json({ msg: "Debe colocar un correo electronico" });
-
-	if (!password) return res.status(403).json({ msg: "Debe colocar una contraseña" });
-
 	const user: any = await newUser({
 		name: name.toLowerCase(),
 		email: email.toLowerCase(),
