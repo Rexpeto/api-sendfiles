@@ -27,7 +27,7 @@ export const register = async ({ body }: Request, res: Response) => {
 	const user: any = await newUser({
 		name: name.toLowerCase(),
 		email: email.toLowerCase(),
-		password: password.toLowerCase()
+		password
 	});
 
 	if (user?.error) {
