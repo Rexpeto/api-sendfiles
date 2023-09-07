@@ -10,3 +10,12 @@ export const validateRegister = [
 		validateResult(req, res, next);
 	}
 ];
+
+// Validator login user
+export const validateLogin = [
+	check("email", "Debes colocar un correo electrónico").exists().isEmail(),
+	check("password", "Debes colocar una contraseña").exists().notEmpty(),
+	(req: Request, res: Response, next: NextFunction) => {
+		validateResult(req, res, next);
+	}
+];
