@@ -1,8 +1,24 @@
 import { Request, Response } from "express";
-import { newUser } from "../services/user.service";
+import { newUser, loginUser } from "../services/user.service";
 
-export const login = (req: Request, res: Response) => {
-	res.status(200).json({ msg: "Iniciar sesión" });
+export const login = async ({ body }: Request, res: Response) => {
+	try {
+		const response = await loginUser(body);
+
+		if (response.error) {
+			return res.status(response.error).json({ msg: response.msg });
+		}
+
+		res.cookie("accessToken", response.jwt, {
+			maxAge: 7200000,
+			httpOnly: true,
+			sameSite: "lax"
+		});
+
+		res.status(200).json(response);
+	} catch (error) {
+		console.log(error);
+	}
 };
 
 export const register = async ({ body }: Request, res: Response) => {
