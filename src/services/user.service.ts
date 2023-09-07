@@ -1,7 +1,7 @@
-import { UserInterface } from "../types/User.type";
-import User from "../models/User.model";
-import { Verified, encrypt } from "../utils/bcrypt.handle";
-import { signToken } from "../utils/jwt.handle";
+import { UserInterface } from "@/types/User.type";
+import User from "@/models/User.model";
+import { Verified, encrypt } from "@/utils/bcrypt.handle";
+import { signToken } from "@/utils/jwt.handle";
 
 export const newUser = async ({ name, email, password }: UserInterface) => {
 	try {
