@@ -1,5 +1,5 @@
 import { UserInterface } from "@/types/User.type";
-import User from "@/models/User.model";
+import { User } from "@/models";
 import { Verified, encrypt } from "@/utils/bcrypt.handle";
 import { signToken } from "@/utils/jwt.handle";
 
