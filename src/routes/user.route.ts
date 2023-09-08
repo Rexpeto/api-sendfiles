@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { validateLogin, validateRegister } from "../validators/user.validator";
-import { login, register } from "../controllers/user.ctrl";
+import { validateLogin, validateRegister } from "@/validators/user.validator";
+import { login, register } from "@/controllers/user.ctrl";
 
 export const router = Router();
 

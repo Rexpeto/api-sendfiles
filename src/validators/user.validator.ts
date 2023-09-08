@@ -1,5 +1,5 @@
 import { check } from "express-validator";
-import { validateResult } from "../utils/validator.handle";
+import { validateResult } from "@/utils/validator.handle";
 import { NextFunction, Request, Response } from "express";
 
 export const validateRegister = [
